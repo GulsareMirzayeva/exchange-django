@@ -1,0 +1,17 @@
+<h1>Kimdir</h1>
+<form method="post" action="{% url 'kimdir' %}">
+    {% csrf_token %}
+    <label for="entered_name">Ad daxil edin:</label>
+    <input type="text" id="entered_name" name="entered_name">
+    <button type="submit">Tesdiq et</button>
+</form>
+
+{% if info %}
+    <hr>
+    <p>{{ info }}</p>
+{% else %}
+    <hr>
+    <p>Siz ad daxil etmediniz</p>
+{% endif %}
+
+{{ mesaj }}
